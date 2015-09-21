@@ -39,6 +39,7 @@ int main() {
 		int root = 1;
 		cnt = 0;
 		int head = 0, tail = -1;
+		isVisited[root] = true;
 		q[++tail] = root;
 		while (head <= tail) {
 			int v = q[head++];

@@ -44,6 +44,7 @@ int main() {
 		// for (int i = 1; i <= n; ++i) isVisited[i] = false;
 		int root = 1;
 		cnt = 0;
+		isVisited[root] = true;
 		dfs(root);
 		if (cnt == n) {
 			puts("all the nodeds are connected"); 

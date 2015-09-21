@@ -13,6 +13,8 @@ void up(int k) { //第k个元素上浮
 		if (data[k] > data[k >> 1]) { //k >> 1 -> k / 2
 			swap(data[k], data[k / 2]);
 			k = k / 2;
+		} else {
+			break;
 		}
 	}
 }
@@ -26,6 +28,7 @@ void down(int k) { //第k个元素下沉
 		} else {
 			j = 2 * i;
 		}
+		if (a[i] > a[j]) break;
 		swap(data[i], data[j]);
 		i = j;
 	}
@@ -36,7 +39,7 @@ void add(int val) { //向堆中插入元素val
 	up(size);
 }
 
-void remove(int index) { //remove index-th element
+void remove(int index = 1) { 
 	swap(data[index], data[size--]);
 	down(index);
 }

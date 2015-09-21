@@ -37,6 +37,7 @@ int main() {
 		// for (int i = 1; i <= n; ++i) isVisited[i] = false;
 		int root = 1;
 		queue<int> q;
+		isVisited[root] = true;
 		q.push(root);
 		
 		while (!q.empty()) {

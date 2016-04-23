@@ -23,10 +23,19 @@ bool isVisited[maxn];
 int cnt = 0;
 
 void dfs(int v) {
-	if (isVisited[v]) return;
+	isVisited[v] = true;
+	//dosomething with v here
 	cnt++;
+	//
 	for (int i = l[v]; i != -1; i = E[i].x) {
-		dfs(E[i].v);
+		int ve = E[i].v;
+		if (isVisited[ve]) continue;
+		//dosomething here
+
+		dfs(ve);
+		//dosomething here 
+		
+
 	}
 }
 
@@ -44,7 +53,6 @@ int main() {
 		// for (int i = 1; i <= n; ++i) isVisited[i] = false;
 		int root = 1;
 		cnt = 0;
-		isVisited[root] = true;
 		dfs(root);
 		if (cnt == n) {
 			puts("all the nodeds are connected"); 
